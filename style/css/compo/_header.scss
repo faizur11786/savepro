@@ -1,0 +1,297 @@
+.main__page{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(90deg, #3f51b5,#00bcd4);
+    overflow: hidden;
+    animation: bg_color 50s linear infinite;
+    z-index: -1;
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-top: 100vh solid transparent;
+        border-right: 100vh solid  #fff;
+        opacity: 0.1;
+        z-index: -1;
+    };
+    
+}
+@keyframes bg_color{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(360deg);
+    }
+    100%{
+        filter: hue-rotate(0deg);
+    }
+}
+
+.logo__box{
+    width: 100%;
+    float: left;
+    
+    .brand__name{
+        width: 30%;
+        height: 80px;
+        float: left;
+        clear: left;
+        border: 1px solid #ddd;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+        margin-top: 50px;
+        padding-right: 20px;
+        border-left: none;
+        @media (max-width: 480px){
+            width: 50%;
+        }
+        h1{
+            float: right;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgb(44, 44, 44);
+            font-family: 'Courier New', Courier, monospace;
+            span{
+                color: rgb(141, 213, 247);
+            }
+        }
+    }
+}
+
+
+.text__box{
+    width: 50%;
+    float: left;
+    position: relative;
+    top: 25%;
+    transform: translateY(-50%);
+    padding-left: 10%;
+    @media (max-width: 480px){
+        width: 100%;
+        padding: 20px;
+        top: 12%;
+    }
+    
+    
+    .text{
+        clear: left;
+    }
+    span{
+        font-size: 34px;
+        font-weight: 100;
+        color: rgb(141, 213, 247);
+    }
+    button{
+        border: none;
+        outline: none;
+        background: inherit;
+        padding: 10px 12px;
+        border-radius: 20px;
+        cursor: pointer;
+        box-shadow: 2px 2px 7px 2px rgba(141, 213, 247, 0.4);
+        font-size: 14px;
+        font-weight: 100;
+        letter-spacing: 2px;
+        font-weight: bold;
+        @media (max-width: 480px){
+            cursor: none;
+        }
+        
+    }
+}
+
+
+.form__box{
+    width: 50%;
+    padding: 20px;
+    float: left;
+    position: relative;
+    top: 30%;
+    transform: translateY(-50%);
+    
+    @media (max-width: 480px){
+        width: 100%;
+        top: 25%;
+    }
+    .form__content{
+        width: 300px;
+        float: left;
+        // height: 300px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.07);
+        padding: 10px 20px;
+        background: #fff;
+        padding-top: 20px;
+        border-radius: 10px;
+        @media (max-width: 480px){
+            width: 330px;
+        }
+        .heading{
+            width: 100%;
+            float: left;
+            height: 30px;
+             
+            // margin-bottom: 5px;
+            h2{
+                color: rgb(141, 213, 247);
+                text-align: center;
+                font-family: sans-serif;
+                padding: 0;
+                margin: 0;
+            }
+        }
+        .body{
+            width: 100%;
+            float: left;
+            form{
+                input[type=submit]{
+                    border: none;
+                    outline: none;
+                    width: 80%;
+                    text-align: center;
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    padding: 10px;
+                    background: rgb(141, 213, 247);
+                    border-radius: 20px;
+                    margin-top: 10px;
+                    color: rgb(31, 31, 31);
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+            }
+            
+            
+        }
+        .footer{
+            width: 100%;
+            text-align: center;
+            float: left;
+            p{
+                padding: 0;
+                margin: 15px 0;
+                margin-bottom: 0px;
+                font-size: 12px;
+                a{
+                    text-decoration: none;
+                    color: #00bcd4;
+                    font-weight: 600;
+                    font-size: 14px;
+                }
+            }
+        }
+        
+    }
+}
+
+
+.login__form,.s_text{
+    display: none;
+}
+
+.input__box{
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 25px;
+    input{
+        border: none;
+        outline: none;
+        border: 1px solid #262626;
+        width: 100%;
+        background: transparent;
+        font-size: 14px;
+        padding:5px;
+        padding-top: 8px;
+        &:focus{
+            +label{
+                color: rgb(95, 94, 94);
+                top: -10px;
+                left: 0px;
+                font-size: 12px;
+                background: rgb(141, 213, 247);
+                padding: 2px 5px;
+                font-weight: bold;
+                border-radius: 10px;
+            }
+        }
+
+        &:valid{
+            +label{
+                color: rgb(95, 94, 94);
+                top: -10px;
+                left: 0px;
+                font-size: 12px;
+                background: rgb(141, 213, 247);
+                padding: 2px 5px;
+                font-weight: bold;
+                border-radius: 10px;
+            }
+        }
+
+    }
+    label{
+        position: absolute;
+        top: 3px;
+        color: #999;
+        padding:5px;
+        pointer-events: none;
+        transition: 0.5s;
+    }
+    
+    
+}
+
+.check__box{
+    margin-top: 15px;
+    color: #222222;
+    width: 100%;
+    height: 30px;
+    position: relative;
+    top: 0;
+    left: 0;
+    input[type="checkbox"]{
+        outline: none;
+        position: relative;
+        margin-right: 10px;
+        top: 3px;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        appearance: none;
+        transition: 0.3s;
+        
+        
+        &::before{
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #262626;
+            transition: 0.3s;
+
+        }
+        &:checked:before{
+          
+            width: 120%;
+            height: 60%;
+            border: none;
+            border-left: 2px solid rgb(141, 213, 247);
+            border-bottom: 2px solid rgb(141, 213, 247);
+            transition: 0.3s;
+            transform: rotate(-45deg);
+        }
+    
+    }
+}
