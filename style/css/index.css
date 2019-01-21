@@ -9,6 +9,7 @@
   -webkit-animation: bg_color 50s linear infinite;
           animation: bg_color 50s linear infinite;
   z-index: -1;
+  overflow: scroll;
 }
 
 .main__page::after {
@@ -61,7 +62,6 @@
   width: 30%;
   height: 80px;
   float: left;
-  clear: left;
   border: 1px solid #ddd;
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
