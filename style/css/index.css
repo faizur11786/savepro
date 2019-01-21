@@ -98,10 +98,6 @@
 .text__box {
   width: 50%;
   float: left;
-  position: relative;
-  top: 25%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   padding-left: 10%;
 }
 
@@ -109,7 +105,6 @@
   .text__box {
     width: 100%;
     padding: 20px;
-    top: 100px;
   }
 }
 
@@ -148,16 +143,11 @@
   width: 50%;
   padding: 20px;
   float: left;
-  position: relative;
-  top: 30%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 @media (max-width: 480px) {
   .form__box {
     width: 100%;
-    top: 180px;
   }
 }
 
@@ -178,7 +168,7 @@
 
 @media (max-width: 480px) {
   .form__box .form__content {
-    width: 330px;
+    width: 320px;
   }
 }
 

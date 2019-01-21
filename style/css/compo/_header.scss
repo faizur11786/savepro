@@ -38,7 +38,6 @@
 .logo__box{
     width: 100%;
     float: left;
-    
     .brand__name{
         width: 30%;
         height: 80px;
@@ -70,15 +69,11 @@
 .text__box{
     width: 50%;
     float: left;
-    position: relative;
-    top: 25%;
-    transform: translateY(-50%);
     padding-left: 10%;
     @media (max-width: 480px){
         width: 100%;
         padding: 20px;
-        // top: 12%;
-        top: 100px;
+        
     }
     
     
@@ -114,13 +109,9 @@
     width: 50%;
     padding: 20px;
     float: left;
-    position: relative;
-    top: 30%;
-    transform: translateY(-50%);
     
     @media (max-width: 480px){
         width: 100%;
-        top: 180px;
     }
     .form__content{
         width: 300px;
@@ -134,7 +125,7 @@
         padding-top: 20px;
         border-radius: 10px;
         @media (max-width: 480px){
-            width: 330px;
+            width: 320px;
         }
         .heading{
             width: 100%;
