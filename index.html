@@ -49,7 +49,7 @@
                     at nostrum
                     inventore, officia saepe provident ipsum,
                 </p>
-                <button class="btn__active" onclick="login()">Login</button>
+                <button class="btn__active" onclick="login()">Get Start</button>
             </div>
 
         </div>
@@ -60,13 +60,13 @@
                     <h2 class="form__name">Sign Up</h2>
                 </div>
                 <div class="body">
-                    <form action="" class="login__form" autocomplete="off">
+                    <form class="login__form" autocomplete="off">
                         <div class="input__box">
-                            <input type="text" name="username" autocomplete="off" required>
+                            <input type="text" name="username" class="name" required>
                             <label for="">Username</label>
                         </div>
                         <div class="input__box">
-                            <input type="password" name="password" autocomplete="off" required>
+                            <input type="password" name="password" required>
                             <label for="">Password</label>
                         </div>
                         <div class="check__box">
@@ -75,23 +75,24 @@
                         </div>
                         <input type="submit" value="Login">
                     </form>
-                    <form action="" class="signup__form" autocomplete="off">
+                    <form class="signup__form" onsubmit="user_signup()" autocomplete="off">
                         <div class="input__box">
-                            <input type="text" name="name" autocomplete="off" required>
+                            <input type="text" name="name" class="s_name" required>
                             <label for="">Name</label>
                         </div>
                         <div class="input__box">
-                            <input type="password" name="password" autocomplete="off" required>
+                            <input type="text" name="number" class="s_number" required>
+                            <label for="">Number</label>
+                        </div>
+                        <div class="input__box">
+                            <input type="password" name="password" class="s_pass" required>
                             <label for="">Password</label>
                         </div>
                         <div class="input__box">
-                            <input type="text" name="email" autocomplete="off" required>
+                            <input type="text" name="email" class="s_email" required>
                             <label for="">Email</label>
                         </div>
-                        <div class="input__box">
-                            <input type="text" name="number" autocomplete="off" required>
-                            <label for="">Number</label>
-                        </div>
+
                         <input type="submit" value="Sign Up">
                     </form>
                 </div>

@@ -5,7 +5,7 @@
     width: 100%;
     height: 100vh;
     background: linear-gradient(90deg, #3f51b5,#00bcd4);
-    overflow: hidden;
+    // overflow: hidden;
     animation: bg_color 50s linear infinite;
     z-index: -1;
     &::after{
@@ -291,4 +291,9 @@
         }
     
     }
+}
+
+.submit__active{
+    width: 30% !important;
+    
 }

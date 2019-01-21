@@ -28,3 +28,22 @@ function login(){
     login_text.style.display = "none";
     signup_text.style.display = "block";
 }
+
+function user_signup(){
+    var name = document.querySelector(".s_name").value;
+    var email = document.querySelector(".s_email").value;
+    var pass = document.querySelector(".s_pass").value;
+    var number = document.querySelector(".s_number").value;
+    var input_data = {name:name,email:email,password:pass,number:number};
+    var user_data = JSON.stringify(input_data);
+    console.log("hello")
+    if(name!= "" && email != "" && pass != "" && number != ""){
+        localStorage.setItem(email,user_data);
+        setTimeout(alert("Sign Up Success now you can Login"),100);
+        
+    }
+     
+
+    
+
+}

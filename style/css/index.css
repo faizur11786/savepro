@@ -6,7 +6,6 @@
   height: 100vh;
   background: -webkit-gradient(linear, left top, right top, from(#3f51b5), to(#00bcd4));
   background: linear-gradient(90deg, #3f51b5, #00bcd4);
-  overflow: hidden;
   -webkit-animation: bg_color 50s linear infinite;
           animation: bg_color 50s linear infinite;
   z-index: -1;
@@ -336,6 +335,10 @@
   transition: 0.3s;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+.submit__active {
+  width: 30% !important;
 }
 
 * {
