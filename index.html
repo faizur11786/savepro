@@ -60,13 +60,13 @@
                     <h2 class="form__name">Sign Up</h2>
                 </div>
                 <div class="body">
-                    <form class="login__form" autocomplete="off">
+                    <form class="login__form" onsubmit="user_login()" autocomplete="off">
                         <div class="input__box">
-                            <input type="text" name="username" class="name" required>
+                            <input type="text" name="username" id="username" class="name" required>
                             <label for="">Username</label>
                         </div>
                         <div class="input__box">
-                            <input type="password" name="password" required>
+                            <input type="password" name="password" id="password" required>
                             <label for="">Password</label>
                         </div>
                         <div class="check__box">
@@ -81,6 +81,11 @@
                             <label for="">Name</label>
                         </div>
                         <div class="input__box">
+                            <input type="text" name="email" class="s_email" onchange="user_already()" onclick="remo_error()" required>
+                            <label for="">Email</label>
+                            <p class="error_text"></p>
+                        </div>
+                        <div class="input__box">
                             <input type="text" name="number" class="s_number" required>
                             <label for="">Number</label>
                         </div>
@@ -88,17 +93,15 @@
                             <input type="password" name="password" class="s_pass" required>
                             <label for="">Password</label>
                         </div>
-                        <div class="input__box">
-                            <input type="text" name="email" class="s_email" required>
-                            <label for="">Email</label>
-                        </div>
+                        
+                        
 
-                        <input type="submit" value="Sign Up">
+                        <input type="submit" value="Sign Up" class="submit_btn">
                     </form>
                 </div>
                 <div class="footer">
-                    <p class="s_text">New to SavePro? <a href="javascript:;" onclick="signup()">Join Us</a></p>
-                    <p class="l_text">Already a member? <a href="javascript:;" onclick="login()">Login</a></p>
+                    <p class="s_text">New to SavePro? <a href="javascript:;" onclick="signup_btn()">Join Us</a></p>
+                    <p class="l_text">Already a member? <a href="javascript:;" onclick="login_btn()">Login</a></p>
                 </div>
 
             </div>

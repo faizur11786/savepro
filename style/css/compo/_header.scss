@@ -70,10 +70,12 @@
     width: 50%;
     float: left;
     padding-left: 10%;
+    position: relative;
+    top: 50px;
     @media (max-width: 480px){
         width: 100%;
         padding: 20px;
-        
+        top: 0;
     }
     
     
@@ -240,6 +242,12 @@
         pointer-events: none;
         transition: 0.5s;
     }
+    p{
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+        color: rgb(97, 91, 91);
+    }
     
     
 }
@@ -289,5 +297,9 @@
 
 .submit__active{
     width: 30% !important;
-    
+}
+
+.input_error{
+    border: 1.5px solid red !important;
+    box-shadow: 0px 0px 20px #ff000052;
 }
