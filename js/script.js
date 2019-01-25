@@ -66,19 +66,20 @@ function remo_error(){
 
 
 function user_login(){
-    var userName = document.querySelector("#username").value;
-    var passWord = document.querySelector("#password").value;
-    var login_input = {userName:userName,passWord:passWord};
+    var username = document.querySelector("#username").value;
+    var password = document.querySelector("#password").value;
+    var login_input = {username:username,password:password};
     var login_data = JSON.stringify(login_input);
     sessionStorage.setItem(username,login_data);
     var sassi_data = sessionStorage.getItem(username);
     var user = JSON.parse(sassi_data);
-    if(localStorage.getItem(user.userName)== null){
+    if(localStorage.getItem(user.username) == null){
         alert("User not Found");
     }
     else{
-        if(localStorage.getItem(user.userName).match(user.passWord)){
-            alert("hello World");
+        if(localStorage.getItem(user.username).match(user.password)){
+            location.replace("profile/user.html");
+            return false;
 
         }
         else{
