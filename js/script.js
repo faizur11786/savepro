@@ -30,10 +30,10 @@ function login_btn(){
 }
 
 function user_signup(){
-    var name = document.querySelector(".s_name").value;
-    var email = document.querySelector(".s_email").value;
-    var pass = document.querySelector(".s_pass").value;
-    var number = document.querySelector(".s_number").value;
+    var name = btoa(document.querySelector(".s_name").value);
+    var email = btoa(document.querySelector(".s_email").value);
+    var pass = btoa(document.querySelector(".s_pass").value);
+    var number = btoa(document.querySelector(".s_number").value);
     var input_data = {name:name,email:email,password:pass,number:number};
     var user_data = JSON.stringify(input_data);
     if(name!= "" && email != "" && pass != "" && number != ""){
@@ -43,7 +43,7 @@ function user_signup(){
 
 
 function user_already(){
-    var email = document.querySelector(".s_email").value;
+    var email = btoa(document.querySelector(".s_email").value);
     
     if(localStorage.getItem(email) != null){
         var er_input = document.querySelector(".s_email");
@@ -66,8 +66,8 @@ function remo_error(){
 
 
 function user_login(){
-    var username = document.querySelector("#username").value;
-    var password = document.querySelector("#password").value;
+    var username = btoa(document.querySelector("#username").value);
+    var password = btoa(document.querySelector("#password").value);
     var login_input = {username:username,password:password};
     var login_data = JSON.stringify(login_input);
     sessionStorage.setItem(username,login_data);
@@ -79,6 +79,7 @@ function user_login(){
     else{
         if(localStorage.getItem(user.username).match(user.password)){
             location.replace("profile/user.html");
+            sessionStorage.setItem("user_mail", username);
             return false;
 
         }

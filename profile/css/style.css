@@ -1,7 +1,6 @@
 body {
   padding: 0;
   margin: 0;
-  background: #ddd;
 }
 
 * {
@@ -20,13 +19,13 @@ p {
   margin: 0;
 }
 
-section {
+#user_pic_box {
   width: 100%;
   height: 100vh;
   float: left;
 }
 
-section .detail__upload {
+#user_pic_box .detail__upload {
   width: 40%;
   height: 350px;
   position: relative;
@@ -38,7 +37,7 @@ section .detail__upload {
   padding-top: 10px;
 }
 
-section .detail__upload .header__content .brand__name {
+#user_pic_box .detail__upload .header__content .brand__name {
   width: 30%;
   height: 40px;
   float: left;
@@ -51,12 +50,12 @@ section .detail__upload .header__content .brand__name {
 }
 
 @media (max-width: 480px) {
-  section .detail__upload .header__content .brand__name {
+  #user_pic_box .detail__upload .header__content .brand__name {
     width: 50%;
   }
 }
 
-section .detail__upload .header__content .brand__name h1 {
+#user_pic_box .detail__upload .header__content .brand__name h1 {
   float: right;
   position: relative;
   top: 50%;
@@ -66,11 +65,11 @@ section .detail__upload .header__content .brand__name h1 {
   font-family: 'Courier New', Courier, monospace;
 }
 
-section .detail__upload .header__content .brand__name h1 span {
+#user_pic_box .detail__upload .header__content .brand__name h1 span {
   color: #8dd5f7;
 }
 
-section .detail__upload .body__content {
+#user_pic_box .detail__upload .body__content {
   width: 100%;
   float: left;
   text-align: center;
@@ -82,11 +81,11 @@ section .detail__upload .body__content {
   margin-top: 20px;
 }
 
-section .detail__upload .body__content p span {
+#user_pic_box .detail__upload .body__content p span {
   color: #00bcd4;
 }
 
-section .detail__upload .body__content .user_pic_upl {
+#user_pic_box .detail__upload .body__content .user_pic_upl {
   width: 50%;
   float: left;
   height: 180px;
@@ -94,7 +93,7 @@ section .detail__upload .body__content .user_pic_upl {
   padding: 10xp;
 }
 
-section .detail__upload .body__content .user_pic_upl::after {
+#user_pic_box .detail__upload .body__content .user_pic_upl::after {
   content: '';
   width: 2px;
   height: 80%;
@@ -106,13 +105,13 @@ section .detail__upload .body__content .user_pic_upl::after {
   border-radius: 49%;
 }
 
-section .detail__upload .body__content .user_pic_upl p {
+#user_pic_box .detail__upload .body__content .user_pic_upl p {
   position: relative;
   top: 50px;
   font-size: 14px;
 }
 
-section .detail__upload .body__content .user_pic_upl .btn_box {
+#user_pic_box .detail__upload .body__content .user_pic_upl .btn_box {
   width: 120px;
   height: 25px;
   border: 1px solid #bbb9b9;
@@ -128,7 +127,7 @@ section .detail__upload .body__content .user_pic_upl .btn_box {
   cursor: pointer;
 }
 
-section .detail__upload .body__content .user_pic_upl .btn_box input {
+#user_pic_box .detail__upload .body__content .user_pic_upl .btn_box input {
   position: absolute;
   top: 0;
   left: 0;
@@ -137,17 +136,20 @@ section .detail__upload .body__content .user_pic_upl .btn_box input {
   opacity: 0;
 }
 
-section .detail__upload .body__content .user_pic_viw {
+#user_pic_box .detail__upload .body__content .user_pic_viw {
   float: left;
   width: 50%;
   height: 180px;
   position: relative;
 }
 
-section .detail__upload .body__content .user_pic_viw .user__pic {
+#user_pic_box .detail__upload .body__content .user_pic_viw .user__pic {
   width: 100px;
   height: 120px;
   border: 4px dotted #999999;
+  background: no-repeat;
+  background-size: cover;
+  padding: 5px;
   position: relative;
   top: 50%;
   left: 50%;
@@ -156,7 +158,7 @@ section .detail__upload .body__content .user_pic_viw .user__pic {
   border-radius: 10px;
 }
 
-section .detail__upload .body__content .user_pic_viw button {
+#user_pic_box .detail__upload .body__content .user_pic_viw button {
   outline: none;
   float: right;
   position: relative;
@@ -168,14 +170,14 @@ section .detail__upload .body__content .user_pic_viw button {
   cursor: pointer;
 }
 
-section .detail__upload .footer__content {
+#user_pic_box .detail__upload .footer__content {
   width: 100%;
   float: left;
   height: 36px;
   padding: 0 20px;
 }
 
-section .detail__upload .footer__content button {
+#user_pic_box .detail__upload .footer__content button {
   float: right;
   outline: none;
   border: none;
@@ -185,5 +187,199 @@ section .detail__upload .footer__content button {
   cursor: pointer;
   color: #fff;
   margin-top: 10px;
+}
+
+.profile_page {
+  width: 100%;
+  height: 100vh;
+  float: left;
+}
+
+.profile_page header {
+  width: 100%;
+  float: left;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: url(../img/head_bg.jpg);
+  background-size: 100% 200%;
+}
+
+.profile_page header .top__box {
+  height: 60px;
+  width: 100%;
+  float: left;
+}
+
+.profile_page header .top__box .brand__name {
+  width: 20%;
+  height: 40px;
+  float: left;
+  border: 1px solid #bbbbbb;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  margin-top: 10px;
+  padding-right: 20px;
+  border-left: none;
+}
+
+@media (max-width: 480px) {
+  .profile_page header .top__box .brand__name {
+    width: 50%;
+  }
+}
+
+.profile_page header .top__box .brand__name h1 {
+  float: right;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #2e2e2e;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.profile_page header .top__box .brand__name h1 span {
+  color: #8dd5f7;
+}
+
+.profile_page header .top__box .right__box {
+  float: right;
+  width: 70%;
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(141, 213, 247, 0.5)), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(-90deg, rgba(141, 213, 247, 0.5), rgba(255, 255, 255, 0));
+  height: 40px;
+  padding-right: 5%;
+}
+
+.profile_page header .top__box .right__box .content {
+  float: right;
+}
+
+.profile_page header .top__box .right__box .content P {
+  float: left;
+  font-family: arial;
+  color: #3b3b3b;
+  margin-top: 10px;
+}
+
+.profile_page header .top__box .right__box .content .hamburger__box {
+  float: left;
+  width: 20px;
+  height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 7px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.profile_page header .top__box .right__box .content .hamburger__box span {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background: #525dff;
+  margin: 3px 0;
+  border-radius: 50%;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.profile_page header .top__box .right__box .content .hamburger__box span:nth-child(2) {
+  width: 8px;
+  height: 3px;
+}
+
+.profile_page header .top__box .right__box .content .hamburger__box span:nth-child(1) {
+  width: 10px;
+  height: 3px;
+}
+
+.profile_page header .main__box {
+  width: 100%;
+  padding: 10px 5%;
+  position: relative;
+  top: 0;
+  left: 0;
+  float: left;
+}
+
+.profile_page header .main__box h1 {
+  float: left;
+  position: relative;
+  top: 125px;
+  left: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #fff;
+  background: #00bcd4;
+  padding: 2px 12px;
+  border-radius: 8px;
+}
+
+.profile_page header .main__box h1::before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 94px;
+  position: absolute;
+  top: px;
+  left: -5px;
+  background: #d6d605;
+  border-radius: 49%;
+}
+
+.profile_page header .main__box .user_img {
+  width: 140px;
+  height: 150px;
+  border: 1px solid red;
+  float: left;
+  position: relative;
+  top: 60px;
+}
+
+.profile_page header .main__box .manu_box {
+  float: left;
+  position: relative;
+  top: 160px;
+  left: -55px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 6px 0;
+}
+
+.profile_page header .main__box .manu_box li {
+  float: left;
+  text-align: center;
+  width: 100px;
+}
+
+.profile_page header .main__box .manu_box li .icon {
+  position: relative;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.profile_page header .main__box .manu_box li img {
+  width: 30px;
+  cursor: pointer;
+}
+
+.profile_page header .main__box .manu_box li .itm_title {
+  width: 100%;
+  display: block;
+  float: left;
+  clear: left;
+  font-family: sans-serif;
+  font-size: 12px;
+  color: black;
 }
 /*# sourceMappingURL=style.css.map */
