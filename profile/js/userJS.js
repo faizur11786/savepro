@@ -23,6 +23,7 @@ function img_upload() {
             save_img.onclick = function () {
                 localStorage.setItem(sessionStorage.getItem("user_mail") + "img_url", img_url);
                 document.querySelector("#user_pic_box").style.display = "none";
+                window.location = location.href;
             }
         }
     } else {
@@ -34,14 +35,18 @@ function img_upload() {
 
 function user_pro_name() {
     var user_name = document.querySelector(".user_name");
+    var user_name_main = document.querySelector("#main_user_name");
     var find_email = sessionStorage.getItem("user_mail");
     var user_det = localStorage.getItem(find_email);
     var user_data = JSON.parse(user_det);
     user_name.innerHTML = atob(user_data.name);
+    user_name_main.innerHTML = atob(user_data.name);
+    var img_url = document.querySelector(".user_img");
+    var img = localStorage.getItem(sessionStorage.getItem("user_mail") + "img_url");
+    img_url.style.background = "url("+img+")";
+    img_url.style.backgroundSize = "cover";
 }
 user_pro_name()
-
-
 
 
 
@@ -51,3 +56,12 @@ function remove_pic_upload() {
     }
 }
 remove_pic_upload();
+
+function log_out(){
+    sessionStorage.clear();
+    document.querySelector(".log_out_text").innerHTML = "Please Wait...";
+    setTimeout(function(){
+        location.replace("../index.html");
+    },2000);
+
+}

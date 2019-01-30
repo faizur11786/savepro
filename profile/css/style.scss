@@ -225,8 +225,10 @@ p {
                     P {
                         float: left;
                         font-family: arial;
-                        color: #3b3b3b;
-                        margin-top: 10px;
+                        color: #d4d4d4;
+                        margin-top: 13px;
+                        font-size: 12px;
+                        cursor: pointer;
                     }
                     .hamburger__box {
                         float: left;
@@ -255,6 +257,23 @@ p {
                             &:nth-child(1) {
                                 width: 10px;
                                 height: 3px;
+                            }
+                        }
+                        ul{
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                            color: rgb(37, 37, 37);
+                            background: #ccc;
+                            float: left;
+                            padding: 5px ;
+                            display: none;
+                            li{
+                                width: 60px;
+                                float: left;
+                                text-align: center;
+                                font-family: sans-serif;
+                                font-size: 12px;
                             }
                         }
                     }
@@ -294,17 +313,17 @@ p {
             .user_img {
                 width: 140px;
                 height: 150px;
-                border: 1px solid red;
                 float: left;
                 position: relative;
-                top: 60px;
+                top: 70px;
+                left: 20px;
                 
             }
             .manu_box {
                 float: left;
-                position: relative;
-                top: 160px;
-                left: -55px;
+                position: absolute;
+                top: 170px;
+                left: 240px;
                 list-style: none;
                 padding: 0;
                 margin: 0;
