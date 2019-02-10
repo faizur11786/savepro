@@ -174,21 +174,26 @@ p {
     width: 100%;
     height: 100vh;
     float: left;
+    border: 1px solid red;
     header {
         width: 100%;
         float: left;
-        // border: 1px solid red; // height: 180px;
         border-bottom: 1px solid #ccc;
         position: relative;
         top: 0;
         left: 0;
-        // background: #007932;
         background: url(../img/head_bg.jpg);
         background-size: 100% 200%;
+        border: 1px solid red;
+        
         .top__box {
             height: 60px;
             width: 100%;
             float: left;
+            @media (max-width: 480px) {
+                height: 30px;
+                
+            }
             .brand__name {
                 width: 20%;
                 height: 40px;
@@ -200,7 +205,8 @@ p {
                 padding-right: 20px;
                 border-left: none;
                 @media (max-width: 480px) {
-                    width: 50%;
+                    width: 40%;
+                    margin: 0;
                 }
                 h1 {
                     float: right;
@@ -220,6 +226,9 @@ p {
                 background-image: linear-gradient(-90deg, rgba(141, 213, 247, 0.5), rgba(255, 255, 255, 0));
                 height: 40px;
                 padding-right: 5%;
+                @media (max-width: 480px){
+                    width: 60%;
+                }
                 .content {
                     float: right;
                     P {
