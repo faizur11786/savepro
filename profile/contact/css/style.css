@@ -82,51 +82,98 @@ section {
   width: 100%;
   height: 80vh;
   float: left;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 section .main_content_box {
   width: 25%;
   height: 100%;
   float: left;
+}
+
+section .main_content_box .header {
+  width: 100%;
+  padding: 10px;
+  position: unset;
+}
+
+section .main_content_box .header p {
+  font-size: 16px;
+  margin: 5px;
+  font-family: sans-serif;
+}
+
+section .main_content_box .header input {
+  outline: none;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  color: #888888;
+  letter-spacing: 1px;
+}
+
+section .main_content_box .body {
+  width: 100%;
+  height: 80%;
   overflow: scroll;
 }
 
-section .main_content_box::-webkit-scrollbar {
-  width: 0px;
+section .main_content_box .body::-webkit-scrollbar {
+  width: 5px;
   height: 0;
+  background: #fff;
 }
 
-section .main_content_box:hover::-webkit-scrollbar {
+section .main_content_box .body:hover::-webkit-scrollbar {
   width: 5px;
 }
 
-section .main_content_box:hover::-webkit-scrollbar-track {
+section .main_content_box .body:hover::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 5px #ebebeb;
           box-shadow: inset 0 0 5px #ebebeb;
   border-radius: 10px;
 }
 
-section .main_content_box:hover::-webkit-scrollbar-thumb {
+section .main_content_box .body:hover::-webkit-scrollbar-thumb {
   background: rgba(141, 213, 247, 0.3);
   border-radius: 20px;
 }
 
-section .main_content_box .content_box {
-  width: 250px;
+section .main_content_box .body .content_box {
+  width: 100%;
   float: left;
   padding: 10px;
 }
 
-section .main_content_box .content_box fieldset {
+section .main_content_box .body .content_box fieldset {
   border: 1px solid silver;
   font-family: sans-serif;
   position: relative;
-  left: 15%;
   margin: 10px 0;
+  -webkit-transition: 0.5s all ease-in;
+  transition: 0.5s all ease-in;
+  width: 80%;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding-bottom: 0;
 }
 
-section .main_content_box .content_box fieldset legend {
+section .main_content_box .body .content_box fieldset:hover .fa-times {
+  color: #e64843;
+}
+
+section .main_content_box .body .content_box fieldset .fa-times {
+  float: right;
+  position: relative;
+  top: -15px;
+  right: -5px;
+  cursor: pointer;
+  color: #fff;
+}
+
+section .main_content_box .body .content_box fieldset legend {
   font-size: 20px;
   text-transform: uppercase;
   background: #8dd5f7;
@@ -134,9 +181,14 @@ section .main_content_box .content_box fieldset legend {
   border-radius: 10px;
 }
 
-section .main_content_box .content_box fieldset ol li {
+section .main_content_box .body .content_box fieldset ol li {
   color: black;
   margin-top: 5px;
+}
+
+section .main_content_box .footer {
+  width: 100%;
+  float: left;
 }
 
 section .form_box {
