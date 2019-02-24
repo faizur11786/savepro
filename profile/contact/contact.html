@@ -15,29 +15,59 @@
         <div class="app_name">
             <h1>Cont<span>Pro</span></h1>
         </div>
-
+        <div class="log_out" onclick="log_out()">
+            <i class="fa fa-sign-in"></i>
+            <p>Log Out</p>
+        </div>
     </header>
     <section>
         <div class="main_content_box">
             <div class="header">
                 <p class="title_text">Contacts List</p>
-                <input type="search" name="" id="" placeholder="Search...">
+                <div class="search_box">
+                    <input type="text" placeholder="Search..." oninput="search_contact(this)">
+                    <div class="search"></div>
+                </div>
+                <!-- <input type="search" name="" id="" placeholder="Search..."> -->
             </div>
             <div class="body">
-                <div class="content_box">
-                    <!-- <fieldset>
+                <!-- <div class="content_box" id="cont">
+                    <fieldset>
                                 <legend>sgdfg</legend>
                                 <i class="fa fa-times"></i>
                                 <ol>
                                     <li>gjksdf</li>
                                     <li>gjksdf</li>
                                 </ol>
-                            </fieldset> -->
+                            </fieldset>
+                </div> -->
 
+                <div class="min_card_content" id="cont">
+                    <!-- <div class="contact_cards">
+                        <h3 contenteditable="true">Faizur Rahman</h3>
+                        <i class="fa fa-times"></i>
+                        <div class="show_box">
+                            <ul>
+                                <li class="items_box">
+                                    <div class="icon_box"><i class="fa fa-mobile"></i></div>
+                                    <div class="text_box">
+                                        <p>8051610901 </p>
+                                        <p>8051610901 </p>
+                                    </div>
+                                </li>
+                                <li class="edit_box">
+                                    <span>Successfully Save</span>
+                                    <i class="fa fa-edit"></i>
+                                    <i class="fa fa-save"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>  -->
+                    
                 </div>
             </div>
             <div class="footer">
-
+                <i class="fa fa-repeat" id="all_del" onclick="restore()"> Restore Contacts</i>
             </div>
 
         </div>
@@ -64,6 +94,29 @@
         </div>
 
     </section>
+
+    <section class="restore_box">
+        <span id="close_btn"></span>
+        <div class="restore_content">
+            <h2 id="del_notic"></h2>
+            <table id="table_box">
+                <tr>
+                    <th>Contacts Name</th>
+                    <th>Number</th>
+                    <th>Number</th>
+                    <th>Restore Now</th>
+                </tr>
+                <tr>
+                    <td>Faizur</td>
+                    <td>8051610901</td>
+                    <td>8051610901</td>
+                    <td><i class=""></i></td>
+                </tr>
+                
+            </table>
+        </div>
+    </section>
+
     <div class="msg_box">
         <p class="msg_text">Successfully Save</p>
     </div>
