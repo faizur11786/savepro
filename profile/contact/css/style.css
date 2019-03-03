@@ -781,6 +781,11 @@ section .form_box form .btn:focus {
   padding: 10px;
 }
 
+.restore_box .restore_content table tr td i {
+  color: red;
+  cursor: pointer;
+}
+
 footer {
   width: 100%;
   float: left;

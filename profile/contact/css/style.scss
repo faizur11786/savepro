@@ -714,6 +714,10 @@ section {
                 }
                 td{
                     padding: 10px;
+                    i{
+                        color: red;
+                        cursor: pointer;
+                    }
                 }
             }
         }

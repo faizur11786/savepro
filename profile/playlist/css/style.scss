@@ -1,0 +1,210 @@
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background-image: linear-gradient(rgb(63, 62, 62), rgb(37, 32, 32));
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+.player_container{
+    width: 100%;
+    float: left;
+    padding: 20px 5%;
+    border: 1px solid red;
+    .col_md_6{
+        width:60%;
+        float: left;
+        position: relative;
+        top: 0;
+        left: 0;
+        &:hover {
+            .video_cont {
+                transition: all 0.2s;
+                opacity: 1;
+                // display: block;
+            }
+        }
+         
+        video{
+            width: 100%;
+            background: black;
+            
+        }
+        .video_cont{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            opacity: 0;
+            transition: all 0.2s;
+            // display: none;
+            .vid_head{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 30px;
+                p{
+                    font-size: 14px;
+                    padding: 0 20px;
+                    margin: 8px 0;
+                    font-family: sans-serif;
+                    color: rgb(185, 185, 185);
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+            .play_btn{
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50% ,-50%);
+                color: rgb(39, 40, 41);
+                cursor: pointer;
+                padding: 10px;
+                background: rgb(17, 212, 212);
+                border-radius: 4px;
+                // box-shadow: 0px 0px 0px 0px rgb(17, 212, 212);
+                transition: 0.1s all ease-in;
+                &:hover{
+                    box-shadow: 0px 0px 15px 4px #11d4d4ab;
+                }
+            }
+            .footer{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 40px;
+                // border: 1px solid red;
+                padding: 0 20px;
+                .video_bar{
+                    width: 100%;
+                    height: 4px;
+                    background: #6e7272ab;
+                    float: left;
+                    cursor: pointer;
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    // padding: 4px 0;
+                    &:hover{
+                        background: #6e7272d8;
+                    }
+                    span{
+                        width: 70%;
+                        float: left;
+                        background-image: linear-gradient(-45deg, rgb(41, 185, 142), rgba(41, 66, 59, 0.459));
+                        height: 4px;
+                        position: relative;
+                        &::before{
+                            content: '';
+                            display: block;
+                            width: 5px;
+                            height: 4px;
+                            background: rgb(41, 185, 142);
+                            position: relative;
+                            float: right;
+                            box-shadow: 0px 0px 15px 4px #11d4d4ab;
+                        }
+
+                    }
+                }
+                .controls_box{
+                    width: 70%;
+                    height: 33px;
+                    padding: 6px 5px;
+                    overflow: hidden;
+                    button{
+                        // min-width: 20px;
+                        background: inherit;
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                        margin: 0 5px;
+                        float: left;
+                        i{
+                            background: none;
+                            color: #fff;
+                            padding: 0;
+                            margin: 0;
+                            font-size: 16px;
+                            float: left;
+                            &:hover{
+                                box-shadow: none;
+                            }
+                        }
+                        .line_bar{
+                            width: 0px;
+                            height: 3px;
+                            float: left;
+                            background: #11d4d4ab;
+                            position: relative;
+                            top: 6px;
+                            left: 5px;
+                            transition: all 0.3s;
+                            &:hover{
+                                &::after{
+                                    content: '';
+                                    display: block;
+                                    width: 35px;
+                                    height: 3px;
+                                    background: #fff;
+                                    float: left;
+                                    transition: all 0.3s ease-in;
+                                }
+                                
+                            }
+                        }
+                    }
+                    .volume_btn{
+                        &:hover{
+                            .line_bar{
+                                width: 40px;
+                                transition: all 0.3s;
+                            } 
+                        }
+                    }
+                    .timer{
+                        margin-left: 8px;
+                        float: left;
+                        color: #fff;
+                        font-family: sans-serif;
+                        font-size: 14px;
+                        line-height: 19px;
+                    }
+                }
+            }
+        }
+        
+    }
+    .col_md_4{
+        width: 40%;
+        border: 1px solid red;
+        float: left;
+        padding: 10px;
+        .header{
+            width: 100%;
+            padding: 10px;
+            float: left;
+            background: rgb(47, 49, 49);
+            h3{
+                padding: 0;
+                margin: 8px 0; 
+                font-family: sans-serif;
+                color: rgb(17, 212, 212);
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                border: 1px solid red;
+            }
+        }
+    }
+}
