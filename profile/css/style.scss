@@ -174,7 +174,6 @@ p {
     width: 100%;
     height: 100vh;
     float: left;
-    border: 1px solid red;
     header {
         width: 100%;
         float: left;
@@ -184,7 +183,6 @@ p {
         left: 0;
         background: url(../img/head_bg.jpg);
         background-size: 100% 200%;
-        border: 1px solid red;
         
         .top__box {
             height: 60px;
@@ -213,7 +211,7 @@ p {
                     position: relative;
                     top: 50%;
                     transform: translateY(-50%);
-                    color: rgb(46, 46, 46);
+                    color: rgb(179, 178, 178);
                     font-family: 'Courier New', Courier, monospace;
                     span {
                         color: rgb(141, 213, 247);
@@ -326,6 +324,8 @@ p {
                 position: relative;
                 top: 70px;
                 left: 20px;
+                border-radius: 20px;
+                border: 5px solid #fff;
                 
             }
             .manu_box {
@@ -366,4 +366,66 @@ p {
             }
         }
     }
+    .content_box{
+        width: 100%;
+        float: left;
+        padding: 80px 5%;
+        .text_box{
+            width: 50%;
+            float: left;
+            h2{
+                font-family: Arial, Helvetica, sans-serif;
+                padding: 20px;
+                padding-bottom: 15px;
+            }
+            p{
+                font-family: Arial, Helvetica, sans-serif;
+                padding: 5px;
+                font-size: 15px;
+                line-height: 21px;
+            }
+            a{
+                padding: 8px 10px;
+                border:2px solid #00bcd4;
+                float: left;
+                position: relative;
+                left: 50px;
+                top: 10px;
+                text-decoration: none;
+                font-family: sans-serif;
+                color: #00bcd4;
+                box-shadow: 4px 4px 20px 0px rgba(141, 213, 247, 0.71);
+                transition: 0.5s;
+
+                &:hover{
+                    background: #00bcd4;
+                    color: #fff;
+                }
+            }
+        }
+        .img_box{
+            width: 50%;
+            float: left;
+            text-align: right;
+            img{
+                width: 80%;
+                border-radius: 40px;
+                box-shadow: 7px 10px 12px 5px rgba(141, 213, 247, 0.71);
+            
+            }
+        }
+    }
+    footer{
+        width: 100%;
+        float: left;
+        .copyright_box{
+            width: 100%;
+            padding: 10px;
+            background: #525dff;
+            color: #fff;
+            text-align: center;
+            font-family: sans-serif;
+        }
+    }
+    
 }

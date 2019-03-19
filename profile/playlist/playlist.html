@@ -15,8 +15,8 @@
     <section class="container player_container">
         <div class="col_md_6">
 
-            <video>
-                <source>
+            <video id="video">
+                <source src="video/2 (2).mp4" id="video_src">
                 </source>
             </video>
             <div class="video_cont">
@@ -25,33 +25,53 @@
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, vitae.
                     </p>
                 </div>
-                <i class="fa fa-play play_btn"></i>
                 <div class="footer">
-                    <div class="video_bar">
-                        <span></span>
+                    <div class="video_bar" id="progress_bar">
+                        <span id="progress"></span>
                     </div>
                     <div class="controls_box">
-                        <button>
+                        <button id="">
                             <i class="fa fa-step-backward" aria-hidden="true"></i>
                         </button>
                         <button>
-                            <i class="fa fa-play"></i>
+                            <i class="fa fa-play" id="play_btn"></i>
+                        </button>
+                        <button>
+                            <i class="fa fa-stop" id="stop_btn"></i>
                         </button>
                         <button>
                             <i class="fa fa-step-forward" aria-hidden="true"></i>
                         </button>
                         <button>
-                            <i class="fa fa-repeat"></i>
+                            <i class="fa fa-repeat" id="replay_btn"></i>
                         </button>
                         <button class="volume_btn">
-                            <i class="fa fa-volume-down" aria-hidden="true"></i>
-                            <span class="line_bar"></span>
+                            <i class="fa fa-volume-down" aria-hidden="true" id="volume_icon"></i>
+                            <input type="range" min="0" max="1" step="0.1" id="volume_input">
                         </button>
                         <div class="timer">
                             <span>0:09</span>
                             <span> / </span>
                             <span>3:36</span>
                         </div>
+                        <div class="right_box">
+                            <button class="desk_icon">
+                                <i class="fa fa-cog" aria-hidden="true" id="setting_icon"></i>     
+                            </button>
+                            <div class="show_box" id="setting_box" style="display: none">
+                                <ul>
+                                    <li id="speed">Speed</li>
+                                    <input type="range" name="" id="speed_range" style="display: none">
+                                </ul>
+                            </div>
+                            <button class="desk_icon">
+                                <i class="fa fa-download" id="download_btn"></i>
+                            </button>
+                            <button class="desk_icon">
+                                <i class="fa fa-arrows-alt" id="full_screen"></i>
+                            </button>
+                        </div>
+
 
 
                     </div>
@@ -63,10 +83,188 @@
         <div class="col_md_4">
             <div class="header">
                 <h3>PlayList Name Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, nobis.</h3>
+                <div class="add_box">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="body">
+                <ol>
+                    <li>
+                        <div class="thumbnail_box"></div>
+                        <div class="name_box">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, eum!</p>
+                            <span>Faizur</span>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thumbnail_box"></div>
+                        <div class="name_box">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, eum!</p>
+                            <span>Faizur</span>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thumbnail_box"></div>
+                        <div class="name_box">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, eum!</p>
+                            <span>Faizur</span>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thumbnail_box"></div>
+                        <div class="name_box">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, eum!</p>
+                            <span>Faizur</span>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="thumbnail_box"></div>
+                        <div class="name_box">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, eum!</p>
+                            <span>Faizur</span>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </div>
+                    </li>
+                </ol>
             </div>
         </div>
     </section>
+    <script>
+        var play_btn = document.querySelector("#play_btn");
+        play_btn.onclick = function () {
+            var video = document.querySelector("video");
 
+            if (this.className == "fa fa-play") {
+                video.play()
+                this.className = "fa fa-pause";
+                this.title = "Play";
+            }
+            else {
+                video.pause()
+                this.className = "fa fa-play";
+                this.title = "Pause"
+            }
+        }
+        var video = document.querySelector("video");
+        video.ontimeupdate = function () {
+            var bar = document.querySelector("#progress");
+            var time = (100 / this.duration) * this.currentTime;
+            bar.style.width = time + "%";
+            video.onended = function () {
+                if (video.duration == video.currentTime) {
+                    play_btn.className = "fa fa-play";
+                    play_btn.title = "play";
+                }
+                else {
+                    play_btn.className = "fa fa-pause";
+                    play_btn.title = "pause";
+                    video.play();
+                }
+            }
+
+        }
+
+        var full_screen_icon = document.querySelector("#full_screen");
+        full_screen_icon.onclick = function () {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+                video.play();
+            }
+            else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            }
+            else if (video.mozRequestFullscreen) {
+                video.mozRequestFullscreen();
+            }
+            else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+            }
+        }
+        var stop_btn = document.querySelector("#stop_btn");
+        stop_btn.onclick = function () {
+            video.currentTime = "0";
+            video.pause();
+            play_btn.className = "fa fa-play";
+            this.title = "Pause"
+        }
+        var replay_btn = document.querySelector("#replay_btn");
+        replay_btn.onclick = function () {
+            video.currentTime = "0";
+        }
+        var volume_input = document.querySelector("#volume_input");
+        volume_input.oninput = function () {
+            video.volume = this.value;
+
+            var volume_icon = document.querySelector("#volume_icon");
+            if (this.value < 0.2) {
+                volume_icon.className = "fa fa-volume-off";
+                volume_icon.title = this.value * 100 + "%";
+
+            }
+            else {
+                volume_icon.className = "fa fa-volume-up";
+                volume_icon.title = this.value * 100 + "%";
+            }
+
+        }
+
+
+        // progress bar coding
+        var progress_bar = document.querySelector("#progress_bar");
+        progress_bar.onclick = function (event) {
+            var percent = event.offsetX / this.offsetWidth;
+            video.currentTime = percent * video.duration;
+        }
+
+        // download codeing
+        var download_btn = document.querySelector("#download_btn");
+        download_btn.onclick = function () {
+            var video_src = document.querySelector("#video_src").src;
+            var a_tag = document.createElement("A");
+            a_tag.title = "Download Video";
+            a_tag.href = video_src;
+            a_tag.download = video_src;
+            document.body.appendChild(a_tag);
+            a_tag.click();
+        }
+
+        var setting_icon = document.querySelector("#setting_icon");
+        setting_icon.onclick = function(){
+            var show_box = document.querySelector("#setting_box");
+            if(show_box.style.display == "none"){
+                show_box.style.display = "block";
+                var speed = document.querySelector("#speed");
+                speed.onclick = function(){
+                    var speed_range = document.querySelector("#speed_range");
+                    if(speed_range.style.display == "none"){
+                        speed_range.style.display = "block";
+                    }
+                    else{
+                        speed_range.style.display = "none";
+                    }
+                }
+            }
+            else{
+                show_box.style.display = "none";
+            }
+            
+        }
+
+    </script>
 </body>
 
 </html>

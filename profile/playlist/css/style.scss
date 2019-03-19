@@ -14,13 +14,13 @@ body{
     width: 100%;
     float: left;
     padding: 20px 5%;
-    border: 1px solid red;
     .col_md_6{
         width:60%;
         float: left;
         position: relative;
         top: 0;
         left: 0;
+        background: #000;
         &:hover {
             .video_cont {
                 transition: all 0.2s;
@@ -43,6 +43,7 @@ body{
             z-index: 5;
             opacity: 0;
             transition: all 0.2s;
+            
             // display: none;
             .vid_head{
                 position: absolute;
@@ -50,6 +51,7 @@ body{
                 left: 0;
                 width: 100%;
                 height: 30px;
+                background: rgba(0, 0, 0, 0.555);
                 p{
                     font-size: 14px;
                     padding: 0 20px;
@@ -61,7 +63,8 @@ body{
                     text-overflow: ellipsis;
                 }
             }
-            .play_btn{
+            #play{
+            
                 position: relative;
                 top: 50%;
                 left: 50%;
@@ -85,6 +88,7 @@ body{
                 height: 40px;
                 // border: 1px solid red;
                 padding: 0 20px;
+                background: rgba(0, 0, 0, 0.555);
                 .video_bar{
                     width: 100%;
                     height: 4px;
@@ -94,12 +98,12 @@ body{
                     position: relative;
                     top: 0;
                     left: 0;
+                    border-radius: 20px;
                     // padding: 4px 0;
                     &:hover{
                         background: #6e7272d8;
                     }
                     span{
-                        width: 70%;
                         float: left;
                         background-image: linear-gradient(-45deg, rgb(41, 185, 142), rgba(41, 66, 59, 0.459));
                         height: 4px;
@@ -118,18 +122,84 @@ body{
                     }
                 }
                 .controls_box{
-                    width: 70%;
+                    width: 100%;
                     height: 33px;
                     padding: 6px 5px;
                     overflow: hidden;
+                    .right_box{
+                        float: right;
+                        .show_box{
+                            float: left;
+                            width: 100px;
+                            position: absolute;
+                            top: -120%;
+                            z-index: inherit;
+                            ul{
+                                padding: 0;
+                                margin:0;
+                                list-style: none;
+                                padding: 5px 0;
+                                background: rgba(27, 26, 26, 0.822);
+                                li{
+                                    padding: 0;
+                                    color: #fff;
+                                    cursor: pointer;
+                                    padding:5px 8px;
+                                    font-family: sans-serif;
+                                    font-size: 12px;
+                                    
+                                    &:hover{
+                                        background: rgb(129, 127, 127);
+                                    }
+                                    &:active{
+                                        transition: all 0.1s;
+                                        background: rgba(27, 26, 26, 0.822);
+                                    }
+                                    
+                                }
+                                input{
+                                    position: relative;
+                                    top: -16px;
+                                    left: -106px;
+                                    float: left;
+                                    appearance: none;
+                                    outline: none;
+                                    width: 96%;
+                                    height: 4px;
+                                    background: rgb(165, 165, 165);
+                                    border-radius: 20px;
+                                    &::before{
+                                        content: '';
+                                        display: block;
+                                        width: 96%;
+                                        padding: 10px;
+                                        background: rgba(27, 26, 26, 0.822);
+                                        position: absolute;
+                                        z-index: -1;
+                                        top: -8px;
+                                        left: -8px;
+                                    }
+                                    &::-webkit-slider-thumb{
+                                        appearance: none;
+                                        width: 5px;
+                                        height: 5px;
+                                        background: #11d4d4; 
+                                        box-shadow: 0px 0px 15px 4px #11d4d4;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
                     button{
                         // min-width: 20px;
                         background: inherit;
                         border: none;
                         outline: none;
-                        cursor: pointer;
                         margin: 0 5px;
                         float: left;
+                        position: relative;
+                        
                         i{
                             background: none;
                             color: #fff;
@@ -137,6 +207,7 @@ body{
                             margin: 0;
                             font-size: 16px;
                             float: left;
+                            cursor: pointer;
                             &:hover{
                                 box-shadow: none;
                             }
@@ -163,15 +234,43 @@ body{
                                 
                             }
                         }
-                    }
-                    .volume_btn{
-                        &:hover{
-                            .line_bar{
-                                width: 40px;
-                                transition: all 0.3s;
-                            } 
+                        #setting_icon{
+                            position: relative;
+                            top: 0;
+                            left: 0;
+                            transition: all 0.5s;
+                            &:active{
+                                transform: rotate(-45deg);
+                                transition: all 0.1s;
+                                color: rgb(216, 216, 216);
+                            }
                         }
                     }
+                    .volume_btn{
+                        width: 100px;
+                        input{
+                            position: relative;
+                            top: 4px;
+                            float: right;
+                            appearance: none;
+                            outline: none;
+                            width: 60px;
+                            height: 4px;
+                            background: rgb(165, 165, 165);
+                            border-radius: 20px;
+                            &::-webkit-slider-thumb{
+                                appearance: none;
+                                width: 5px;
+                                height: 5px;
+                                background: #11d4d4; 
+                                box-shadow: 0px 0px 15px 4px #11d4d4;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    // .desk_icon{
+                    //     float: right;
+                    // }
                     .timer{
                         margin-left: 8px;
                         float: left;
@@ -187,9 +286,8 @@ body{
     }
     .col_md_4{
         width: 40%;
-        border: 1px solid red;
         float: left;
-        padding: 10px;
+        padding:0 10px;
         .header{
             width: 100%;
             padding: 10px;
@@ -203,8 +301,80 @@ body{
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
-                border: 1px solid red;
             }
+            .add_box{
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+        .body{
+            height: 300px;
+            width: 100%;
+            float: left;
+            overflow-y: scroll;
+            background: rgb(53, 54, 54);
+            padding: 2px;
+            ol{
+                color: #fff;
+                width: 450px;
+                padding: 0 20px;
+                float: left;
+                
+                li{
+                    // padding: 5px;
+                    float: left;
+                    width: 100%;
+                    margin: 8px 0;
+                    cursor: pointer;
+                    border-bottom: 1px solid rgb(124, 124, 124);
+                    font-family: sans-serif;
+                    font-size: 12px;
+                    .name_box{
+                        width: 280px;
+                        float: left;
+                        height: auto;
+                        padding: 5px;
+                        p{
+                            padding: 0;
+                            margin: 0;
+                            font-size: 14px;
+                            letter-spacing: 1px;
+                            
+                        }
+                        span{
+                            font-size: 12px;
+                            color: #11d4d4ab;
+
+                        }
+                    }
+                    .thumbnail_box{
+                        width: 85px;
+                        height: 60px;
+                        padding: 5px;
+                        float: left;
+                        background: rgb(90, 90, 90);
+                    }
+                    &:hover{
+                        .icon{
+                            opacity: 1;
+                        }
+                    }
+                    .icon{
+                        float: left;
+                        width: 43px;
+                        height: 62px;
+                        transition: all 0.1s ease-in;
+                        opacity: 0;
+                        i{
+                            position: relative;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                }
+            }
+            
         }
     }
 }
